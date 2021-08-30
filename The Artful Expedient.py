@@ -1,6 +1,6 @@
-# problem name : Snacktower
-# problem link : https://codeforces.com/problemset/problem/767/A
-# Rating : 1100
+# problem name : The Artful Expedient
+# problem link : https://codeforces.com/contest/869/problem/A
+# rating : 1100
 
 from __future__ import division, print_function
 
@@ -84,17 +84,19 @@ input = lambda: sys.stdin.readline().rstrip("\r\n")
 
 if __name__ == "__main__":
     n=int(input())
-    a=list(map(int,input().split()))
-    h,d=n,dict()
+    x=list(map(int, input().split()))
+    y=list(map(int, input().split()))
+    d=dict()
     for i in range(n):
-        d[a[i]]=d.get(a[i],True)
-        if a[i]==h:
-            while d.get(h,False):
-                print(h,end=" ")
-                d[h]=False
-                h-=1
-            print()
-        else:
-            print()
-
+        d[x[i]]=d.get(x[i],True)
+        d[y[i]]=d.get(y[i],True)
+    c=0
+    for i in range(n):
+        for j in range(n):
+            if d.get(x[i]^y[j],False):
+                c+=1
+    if c%2==0:
+        print("Karen")
+    else:
+        print("Koyomi")
 
