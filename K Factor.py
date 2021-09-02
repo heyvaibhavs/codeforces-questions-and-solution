@@ -1,8 +1,15 @@
 n,k=map(int,input().split())
 l=[]
-for i in range(2,n//2+1):
+i=2
+while i<n:
     if n%i==0:
         l.append(i)
+        n=n//i
+    else:
+        i+=1
+if n>1:
+    l.append(n)
+# print(l)
 if k>len(l):
     print(-1)
 else:
