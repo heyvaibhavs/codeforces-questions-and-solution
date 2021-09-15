@@ -83,11 +83,15 @@ input = lambda: sys.stdin.readline().rstrip("\r\n")
 # endregion
 
 if __name__ == "__main__":
-    def check(a,n,m):
-        for i in range(n-1):
-            for j in range(m-1):
-                if a[i][j]=='B' and a[i][j+1]=='B' and a[i+1][j]=='B' and a[i+1][j+1]=='B':
-                    return -1
+    def check(a,n,m,i,j):
+        if i-1>=0 and j-1>=0 and a[i-1][j-1]=='B' and a[i-1][j]=='B' and a[i][j-1]=='B' and a[i][j]=='B':
+            return -1
+        elif i-1>=0 and j+1<m and a[i-1][j]=='B' and a[i-1][j+1]=='B' and a[i][j]=='B' and a[i][j+1]=='B':
+            return -1
+        elif i+1<n and j-1>=0 and a[i][j-1]=='B' and a[i][j]=='B' and a[i+1][j-1]=='B' and a[i+1][j]=='B':
+            return -1
+        elif i+1<n and j+1<m and a[i][j]=='B' and a[i][j+1]=='B' and a[i+1][j]=='B' and a[i+1][j+1]=='B':
+            return -1
         return 0
 
     n,m,k=map(int, input().split())
@@ -101,7 +105,7 @@ if __name__ == "__main__":
             a[x-1][y-1]='B'
             c+=1
         if z==0 and i>=3 and c>=4:
-            z=check(a,n,m)
+            z=check(a,n,m,x-1,y-1)
             # print("z=",z)
             ans=i+1
     if z==0:
