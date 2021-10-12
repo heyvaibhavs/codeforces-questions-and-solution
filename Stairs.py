@@ -84,12 +84,12 @@ if __name__ == "__main__":
 
     for _ in range(int(input())):
         n=int(input())
-        c,i,x=1,2,1
-        while x<n:
-            x+=i*(i+1)//2
-            # print(x,i)
-            if x<n:
+        x,i=0,1
+        c=0
+        while x<=n:
+            d=(2**i)-1
+            x+= d*(d+1)//2
+            if x<=n:
                 c+=1
             i+=1
-            
         print(c)
