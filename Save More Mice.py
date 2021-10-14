@@ -1,24 +1,18 @@
-# Code by : Sam._.072
+# Code by : Sam._.072\
 
-for _ in range(int(input())):
-    n,k=map(int, input().split())
-    a=list(map(int, input().split()))
-    a.sort()
-    axix = [0 for i in range(n)]
-    x=0
-    c=0
-    while x<n:
-        a[-1]+=1
-        if a[-1]==n and a[-1]!=0:
-            c+=1
-            a.pop()
-        x+=1
-        if a[0]==x:
-            for i in range(len(a)):
-                if a[i]==x:
-                    a[i]=0
-                else:
-                    break
+class A:
+    def test1(self):
+        print("a")
+class B(A):
+    def test(self):
+        print("b")
+class C(A):
+    def test(self):
+        print("c")
+class D(B,C):
+    def test2(self):
+        print("d")
+obj=D()
+obj.test()
 
-    print(c)
-    
+
