@@ -6,6 +6,7 @@ for _ in range(int(input())):
     for i in range(n):
         a[i]=a[i]-i-1
     d=dict()
+    
     for i in range(n):
         d[a[i]]=d.get(a[i],0)+1
     c=0
