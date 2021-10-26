@@ -14,17 +14,11 @@ for _ in range(int(input())):
     if z==-1:
         print("NO")
     else:
-        x=[]
-        for i in d:
-            t=d[i]
-            while t>1:
-                x.append(i)
-                t=t//2
-        x.sort()
-        t=x[0]*x[-1]
+        a.sort()
+        t=a[0]*a[-1]
         z=0
-        for i in range(1,n):
-            if x[i]*x[2*n-1-i]!=t:
+        for i in range(1,n*2):
+            if a[i]*a[4*n-1-i]!=t:
                 z=-1
                 break
         if z==0:
