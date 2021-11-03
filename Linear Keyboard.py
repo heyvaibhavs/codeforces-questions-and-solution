@@ -13,3 +13,4 @@ for _ in range(int(input())):
         p=f[ord(s[i])-97]
     print(c) 
 
+    
